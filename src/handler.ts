@@ -9,7 +9,7 @@ import * as Express from "express";
 
 export const createKunnHandler = (kunn: Kunn): Express.Handler => {
 
-    return (req: Express.Request, res: Express.Response): boolean => {
+    return (req: Express.Request, res: Express.Response): void => {
 
         const target: Agent<any> | null = kunn.match(req.path, req.method.toUpperCase() as PROTOCOL);
 
