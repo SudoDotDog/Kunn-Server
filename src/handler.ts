@@ -11,7 +11,11 @@ export const createKunnHandler = (kunn: Kunn): Express.Handler => {
 
     return (req: Express.Request, res: Express.Response) => {
 
-        const target: Agent<any> = kunn.match(req.path, req.method.toUpperCase() as PROTOCOL);
+        const target: Agent<any> | null = kunn.match(req.path, req.method.toUpperCase() as PROTOCOL);
+
+        if (!target) {
+            res.status(404).send();
+        }
 
         const response: Record<string, any> = target.response(Date.now());
         res.send(response);
