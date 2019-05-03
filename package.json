@@ -24,6 +24,7 @@
   "dependencies": {
     "@kunn/core": "^0.0.3",
     "@sudoo/bark": "^2.6.1",
+    "body-parser": "^1.19.0",
     "connor": "^2.4.0",
     "express": "^4.16.4"
   },
@@ -31,6 +32,7 @@
     "@sudoo/io": "^1.6.0",
     "@sudoo/mock": "^1.2.0",
     "@sudoo/triforce": "^1.6.0",
+    "@types/body-parser": "^1.17.0",
     "@types/express": "^4.16.1"
   },
   "nyc": {
