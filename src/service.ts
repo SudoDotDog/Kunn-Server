@@ -29,7 +29,7 @@ export const createKunnServer = (kunn: Kunn): Express.Express => {
         next();
     });
 
-    app.all("*", createKunnHandler(kunn.config));
+    app.all("*", createKunnHandler(kunn));
 
     return app;
 };
