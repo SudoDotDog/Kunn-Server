@@ -4,10 +4,12 @@
  * @description Service
  */
 
+import Kunn from "@kunn/core";
 import * as BodyParser from "body-parser";
 import * as Express from "express";
+import { createKunnHandler } from "./handler";
 
-export const createKunnServer = (): Express.Express => {
+export const createKunnServer = (kunn: Kunn): Express.Express => {
 
     const app: Express.Express = Express();
 
@@ -26,6 +28,8 @@ export const createKunnServer = (): Express.Express => {
 
         next();
     });
+
+    app.all("*", createKunnHandler(kunn.config));
 
     return app;
 };
