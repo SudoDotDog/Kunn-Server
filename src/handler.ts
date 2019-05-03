@@ -17,6 +17,11 @@ export const createKunnHandler = (kunn: Kunn): Express.Handler => {
             res.status(404).send();
         }
 
+        const hasBody: boolean =
+            req.method.toUpperCase() === PROTOCOL.POST
+            || req.method.toUpperCase() === PROTOCOL.DELETE
+            || req.method.toUpperCase() === PROTOCOL.PUT;
+
         const response: Record<string, any> = target.response(Date.now());
         res.send(response);
     };
