@@ -15,7 +15,7 @@ export const createKunnHandler = (kunn: Kunn): Express.Handler => {
 
         if (!target) {
 
-            res.status(404).send();
+            res.status(404).send('404 NOT FOUND');
             return;
         }
 
@@ -37,7 +37,8 @@ export const createKunnHandler = (kunn: Kunn): Express.Handler => {
             res.send(response);
         } else {
 
-            res.status(400).send();
+            const rejectResponse: Record<string, any> = target.reject(Date.now());
+            res.status(400).send(rejectResponse);
         }
         return;
     };

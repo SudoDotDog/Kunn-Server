@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/SudoDotDog/Kunn-Server#readme",
   "dependencies": {
-    "@kunn/core": "^0.0.3",
+    "@kunn/core": "^0.1.1",
     "@sudoo/bark": "^2.6.1",
     "body-parser": "^1.19.0",
     "connor": "^2.4.0",

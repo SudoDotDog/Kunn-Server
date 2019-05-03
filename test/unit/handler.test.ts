@@ -29,7 +29,7 @@ describe('Given [Kunn-Handler] express handler', (): void => {
 
         expect(response).to.be.deep.equal({
             status: 404,
-            result: undefined,
+            result: "404 NOT FOUND",
         });
     });
 });

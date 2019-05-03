@@ -6,7 +6,7 @@
 
 import Kunn, { KunnConfig, TYPE } from "@kunn/core";
 import * as HTTP from "http";
-import { createKunnServer } from "../src/";
+import { createKunnServer } from "../src";
 
 const config: KunnConfig = {
     version: 1,
@@ -19,7 +19,27 @@ const config: KunnConfig = {
                     type: TYPE.STRING,
                 },
             },
-            response: {},
+            response: {
+                res: {
+                    type: TYPE.ARRAY,
+                    element: {
+                        type: TYPE.STRING,
+                    },
+                },
+                obj: {
+                    type: TYPE.OBJECT,
+                    map: {
+                        first: {
+                            type: TYPE.STRING,
+                        },
+                    },
+                },
+            },
+            reject: {
+                code: {
+                    type: TYPE.STRING,
+                },
+            },
         },
     }],
 };
