@@ -15,7 +15,7 @@ export const createKunnHandler = (kunn: Kunn): Express.Handler => {
 
         if (!target) {
 
-            res.status(404).send('404 NOT FOUND');
+            res.status(404).send('NOT FOUND');
             return;
         }
 
