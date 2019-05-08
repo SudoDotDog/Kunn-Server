@@ -25,6 +25,7 @@ export const createKunnServer = (kunn: Kunn): Express.Express => {
         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
 
         res.header("X-Powered-By", "Kunn");
+        res.header("X-API-Version", kunn.config.version.toString());
 
         next();
     });
