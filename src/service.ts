@@ -13,6 +13,7 @@ export const createKunnServer = (kunn: Kunn): Express.Express => {
 
     const app: Express.Express = Express();
 
+    app.set('x-powered-by', false);
     app.use(BodyParser.json());
     app.use(BodyParser.urlencoded({
         extended: true,
